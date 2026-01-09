@@ -80,30 +80,7 @@ h2 {
     border-radius: 8px;
     cursor: pointer;
 }
-.beats {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 4px;
-}
 
-.beat {
-    width: 6px;
-    height: 10px;
-    background: #00ffcc;
-    animation: bounce 1s infinite ease-in-out;
-}
-
-.beat:nth-child(2) { animation-delay: 0.1s; }
-.beat:nth-child(3) { animation-delay: 0.2s; }
-.beat:nth-child(4) { animation-delay: 0.3s; }
-
-@keyframes bounce {
-    0%, 100% { height: 8px; }
-    50% { height: 25px; }
-}    
 </style>
 </head>
 <body>
@@ -117,12 +94,6 @@ h2 {
     <div class="song-left" onclick="downloadSong('https://drive.google.com/uc?export=download&id=1mXo30T5K_l9wZw7NPvXw68paeZmpnfZ0')">
         <div class="song-name">Bad Habits</div>
         <img src="images/Bad%20Habits%20Cover%20(1).jpg" alt="Bad Habits Cover">
-        <div class="beats">
-    <div class="beat"></div>
-    <div class="beat"></div>
-    <div class="beat"></div>
-    <div class="beat"></div>
-</div>
 
         <div class="overlay">⬇ Download</div>
     </div>
@@ -148,6 +119,7 @@ function downloadSong(filePath) {
 
 </body>
 </html>
+
 
 
 
