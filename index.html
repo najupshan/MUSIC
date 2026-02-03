@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Composed Songs</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin: 0;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.song-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+.song {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s;
+}
+.song:hover {
+    transform: scale(1.02);
+}
+.song-left {
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.song-left img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border-radius: 12px;
+    transition: opacity 0.3s;
+}
+.song-left:hover .overlay {
+    opacity: 1;
+}
+.song-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.qr-code {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>🎵 MY Songs</h2>
+
+<div class="song-container">
+
+  <!-- Song 1 -->
+  <div class="song">
+    <div class="song-left" onclick="downloadSong('https://drive.google.com/file/d/1sfSz327KOy-jkGbvx9f6BMg_F_PJ_75T/view?usp=drive_link')">
+        <div class="song-name">Friends</div>
+        <img src="D:\Najma\Music_download\images\friends_cover.png" alt="Friends Cover">
+        <div class="overlay">⬇ Download</div>
+    </div>
+    <a href="https://drive.google.com/file/d/1sfSz327KOy-jkGbvx9f6BMg_F_PJ_75T/view?usp=drive_link" download>
+        <img class="qr-code" src="qr_codes/Friends_QR.png" alt="QR Code for Friends">
+    </a>
+  </div>
+
+  <!-- Add more songs below by duplicating the above block -->
+
+</div>
+
+<script>
+function downloadSong(filePath) {
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+</script>
+
+</body>
+</html>
